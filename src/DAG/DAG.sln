@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "DAG", "DAG.fsproj", "{CC60E576-EC5B-4560-A78F-63337BDAADFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC60E576-EC5B-4560-A78F-63337BDAADFC}.Debug|x86.ActiveCfg = Debug|x86
+		{CC60E576-EC5B-4560-A78F-63337BDAADFC}.Debug|x86.Build.0 = Debug|x86
+		{CC60E576-EC5B-4560-A78F-63337BDAADFC}.Release|x86.ActiveCfg = Release|x86
+		{CC60E576-EC5B-4560-A78F-63337BDAADFC}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

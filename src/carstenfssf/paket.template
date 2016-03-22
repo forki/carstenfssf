@@ -1,0 +1,23 @@
+type project
+owners
+    Riccardo Terrell & Carsten Jorgensen
+authors 
+    Riccardo Terrell & Carsten Jorgensen
+projectUrl
+    http://github.com/rikace/carstenfssf
+iconUrl
+    https://raw.githubusercontent.com/rikace/carstenfssf/master/docs/files/img/logo.png
+licenseUrl
+    http://github.com/rikace/carstenfssf/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    F#
+summary
+    Carsten Jorgensen FSSF
+description
+    Carsten Jorgensen FSSF
+
+
