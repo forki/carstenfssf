@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Simple CQRS on F# (F-Sharp) 3.0</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="description/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="description/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>Simple CQRS on F# (F-Sharp) 3.0</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            F#, F# Language, CQRS, Reactive Extensions, ASP.NET MVC 4
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            F# Language, CQRS, Reactive Programming
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary Language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Last Updated</label>
+                    <div id="LastUpdated">6/12/2012</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">Apache License, Version 2.0</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="http://code.msdn.microsoft.com/Simple-CQRS-on-F-F-Sharp-30-cea64b74">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy Code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<p>&nbsp;&nbsp;<br>
+<span style="font-size:small">Based on Greg Young's CQRS: </span><span style="font-size:small"><a href="http://code.msdn.microsoft.com/Simple-CQRS-on-F-F-Sharp-30-cea64b74/https://github.com/gregoryyoung/m-r/tree/master/SimpleCQRS">http://code.msdn.microsoft.com/Simple-CQRS-on-F-F-Sharp-30-cea64b74/https://github.com/gregoryyoung/m-r/tree/master/SimpleCQRS</a></span></p>
+<p><span style="font-size:small">CQRS is Command and Query Responsibility Segregation -pattern.</span><br>
+<span style="font-size:small">If you don't know that, use Google or look <a href="http://martinfowler.com/bliki/CQRS.html">
+http://martinfowler.com/bliki/CQRS.html</a></span><br>
+<span style="font-size:small">I have separated command side and query side as different projects.</span></p>
+<p><span style="font-size:small">This is F# solution. Compared to C#:</span><br>
+<span style="font-size:small">&nbsp; &#43; Simpler source code</span><br>
+<span style="font-size:small">&nbsp; &#43; No need for any &quot;InfrastructureCrap&quot;</span><br>
+<span style="font-size:small">&nbsp; &#43; Domain objects doesn't need to have parameter less constructors</span><br>
+<span style="font-size:small">&nbsp; &#43; Interactive-driven development</span><br>
+&nbsp; <br>
+<span style="font-size:small">What you will need to run this:</span><br>
+<span style="font-size:small">&nbsp; &#43; Visual Studio 11 (Beta): <a href="http://www.microsoft.com/visualstudio/11/en-us">
+http://www.microsoft.com/visualstudio/11/en-us</a></span></p>
+<p><span style="font-size:small">Optional:</span><br>
+<span style="font-size:small">&nbsp; &#43; Reactive extensions: <a href="http://msdn.microsoft.com/en-us/data/gg577609">
+http://msdn.microsoft.com/en-us/data/gg577609</a></span></p>
+<p><span style="font-size:small">There are two versions of event storage:</span><br>
+<span style="font-size:small">1) Pure F# as EventStorage.fs</span><br>
+<span style="font-size:small">&nbsp;&nbsp; - Uses pure .NET Events with F# Observable as event bus</span><br>
+<span style="font-size:small">&nbsp;&nbsp; - Uses MailboxProcessor (&quot;agents&quot;/message passing) as event storage</span><br>
+<span style="font-size:small">2) F# with Reactive Extensions as EventStorageRx.fs</span><br>
+<span style="font-size:small">&nbsp;&nbsp; - Uses reactive framework Subject&lt;T&gt; as event bus</span><br>
+<span style="font-size:small">&nbsp;&nbsp; - Uses reactive framework ReplaySubject&lt;T&gt; as event storage</span><br>
+<span style="font-size:small">Although technical concept is different, the functionality is identical.</span></p>
+<p><span style="font-size:small">You can run this with F# interactive, directly from files and/or using Script.fsx.</span></p>
+<p><span style="font-size:small">This QuerySide is just in-memory one as in Greg's example.
+</span><br>
+<span style="font-size:small">I suggest using F# Type Providers in QuerySide with real database...</span></p>
+<p>&nbsp;</p>
+
+</div>
+
+
+    </div>
+</body>
+</html>
