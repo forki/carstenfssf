@@ -49,6 +49,7 @@
     <None Include="paket.references" />
     <None Include="paket.template" />
     <Compile Include="list.fsx" />
+    <Compile Include="map.fsx" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
